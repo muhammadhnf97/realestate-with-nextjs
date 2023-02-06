@@ -10,12 +10,12 @@ import { useState } from 'react'
 export default function Home() {
   const listPerumahan = dataPerumahan?.filter(data=>data.onprogress).slice(0,6)
 
-  const [cicilanBulanan, setCicilanBulanan] = useState(0)
-  const [hargaRumah, setHargaRumah] = useState(0)
-  const [dpRumah, setDpRumah] = useState(0)
-  const [plafondKpr, setPlafondKpr] = useState(0)
-  const [bungaTahunan, setBungaTahunan] = useState(0)
-  const [jangkaWaktu, setJangkaWaktu] = useState(0)
+  const [cicilanBulanan, setCicilanBulanan] = useState(null)
+  const [hargaRumah, setHargaRumah] = useState(null)
+  const [dpRumah, setDpRumah] = useState(null)
+  const [plafondKpr, setPlafondKpr] = useState(null)
+  const [bungaTahunan, setBungaTahunan] = useState(null)
+  const [jangkaWaktu, setJangkaWaktu] = useState(null)
   
   const handleChangeHargaRumah = e => {
     setHargaRumah(e.target.value)
