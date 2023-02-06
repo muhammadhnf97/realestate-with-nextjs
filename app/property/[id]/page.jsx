@@ -7,6 +7,7 @@ import {BiMap} from 'react-icons/bi'
 import {BsHouseFill} from 'react-icons/bs'
 import Image from "next/image"
 import PropertyCard from "@/app/propertyCard"
+import { nanoid } from "nanoid"
 
 export default function Details({params : {id}}){
     const detailPerumahan = dataPerumahan.filter(data=>data.id == id)
@@ -26,11 +27,9 @@ export default function Details({params : {id}}){
                     <div className="grid grid-cols-3 md:grid-cols-2 w-full max-h-24 md:max-h-full md:max-w-[30rem] gap-1 overflow-y-scroll bg-white p-1">
                         {detail.images.map(data=>{
                             return (
-                                <>
-                                <div className="relative w-full h-24 md:h-32">
+                                <div key={nanoid()} className="relative w-full h-24 md:h-32">
                                     <Image src={data} alt='images' fill className="object-cover" />
                                 </div>
-                                </>
                             )
                         })}
                     </div>

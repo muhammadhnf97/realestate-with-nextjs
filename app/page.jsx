@@ -10,12 +10,12 @@ import { useState } from 'react'
 export default function Home() {
   const listPerumahan = dataPerumahan?.filter(data=>data.onprogress).slice(0,6)
 
-  const [cicilanBulanan, setCicilanBulanan] = useState(null)
-  const [hargaRumah, setHargaRumah] = useState(null)
-  const [dpRumah, setDpRumah] = useState(null)
-  const [plafondKpr, setPlafondKpr] = useState(null)
-  const [bungaTahunan, setBungaTahunan] = useState(null)
-  const [jangkaWaktu, setJangkaWaktu] = useState(null)
+  const [cicilanBulanan, setCicilanBulanan] = useState(0)
+  const [hargaRumah, setHargaRumah] = useState(0)
+  const [dpRumah, setDpRumah] = useState(0)
+  const [plafondKpr, setPlafondKpr] = useState(0)
+  const [bungaTahunan, setBungaTahunan] = useState(0)
+  const [jangkaWaktu, setJangkaWaktu] = useState(0)
   
   const handleChangeHargaRumah = e => {
     setHargaRumah(e.target.value)
@@ -44,8 +44,6 @@ export default function Home() {
     e.preventDefault()
   }
 
-  console.log(plafondKpr)
-  
 
   return (
     <>
@@ -101,7 +99,7 @@ export default function Home() {
         </form>
         <div className='flex-1 space-y-1 text-center'>
           <h3 className='text-lg text-semibold'>Cicilan Bulanan</h3>
-          <p className='text-3xl font-bold'>{formatter.format(cicilanBulanan)} </p>
+          <p className='text-3xl font-bold'>{formatter.format(cicilanBulanan?cicilanBulanan : 0)} </p>
           <p className='text-xs w-full md:w-96 md:mx-auto'>Hasil simulasi ini bersifat estimasi berdasarkan perhitungan internal kami, hasil akan berbeda ketika pengambilan KPR tergantung internal Bank yang akan memberi pinjaman</p>
         </div>
       </div>
