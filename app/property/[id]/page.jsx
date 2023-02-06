@@ -11,8 +11,8 @@ import { nanoid } from "nanoid"
 
 export default function Details({params : {id}}){
     const detailPerumahan = dataPerumahan.filter(data=>data.id == id)
-    const detail = detailPerumahan.reduce((obj, item) =>{
-        return obj[item]
+    const detail = detailPerumahan?.reduce((obj, item) =>{
+        obj[item.key] = item.value;
     })
 
     const formatter = new Intl.NumberFormat('id-ID', {style: 'currency', currency: 'IDR',})
