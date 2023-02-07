@@ -70,8 +70,8 @@ export default function Home() {
         </Link>
     </div>
 
-    <div className='w-full px-5 md:max-w-7xl md:mx-auto border mb-5'>
-      <div className='w-full md:w-full bg-blue-300 rounded-lg p-3 md:flex border border-black md:items-center md:text-center'>
+    <div className='w-full px-5 md:max-w-7xl md:mx-auto mb-5'>
+      <div className='w-full bg-blue-300 rounded-lg p-3 md:flex border border-black md:items-center md:text-center'>
         <form className='space-y-3 w-full md:w-fit md:pr-16' onSubmit={(e)=>handleSubmit(e)}>
           <div className='space-y-2'>
             <p className='text-sm'>Harga Rumah</p>
@@ -97,10 +97,10 @@ export default function Home() {
           <button className='shadow-sm px-3 py-1 bg-sky-500 rounded-md text-white font-semibold'>Hitung</button>
           </div>
         </form>
-        <div className='flex-1 space-y-1 text-center'>
+        <div className='flex-1 space-y-1 text-center w-full'>
           <h3 className='text-lg text-semibold'>Cicilan Bulanan</h3>
           <p className='text-3xl font-bold'>{formatter.format(cicilanBulanan?cicilanBulanan : 0)} </p>
-          <p className='text-xs w-full md:w-96 md:mx-auto'>Hasil simulasi ini bersifat estimasi berdasarkan perhitungan internal kami, hasil akan berbeda ketika pengambilan KPR tergantung internal Bank yang akan memberi pinjaman</p>
+          <p className='text-xs w-full md:w-60 md:mx-auto'>Hasil simulasi ini bersifat estimasi berdasarkan perhitungan internal kami, hasil akan berbeda ketika pengambilan KPR tergantung internal Bank yang akan memberi pinjaman</p>
         </div>
       </div>
     </div>
