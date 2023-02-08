@@ -19,7 +19,15 @@ export default function Details({params : {id}}){
         setIsDetailImage(prev=>!prev)
         setImage(image)
     }
-    console.log(image)
+    if(dataPerumahan?.filter(data=>data.id == id).length < 1){
+        return (
+        <div className="fixed h-full w-full flex flex-col items-center justify-center border">
+            <Image src={'/images/error.svg'} width={200} height={200} className="object-cover" />
+            <h1 className="text-5xl">Halaman yang kamu minta belum ada :'</h1>
+        </div>
+        )
+    }
+
     return (
         <>
         {dataPerumahan?.filter(data=>data.id == id).map(datarumah=>{

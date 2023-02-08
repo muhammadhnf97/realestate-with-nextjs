@@ -2,7 +2,6 @@
 import Link from "next/link"
 import {FiMenu} from "react-icons/fi"
 import {TfiBackLeft} from "react-icons/tfi"
-
 import { useState } from "react"
 
 export default function Header () {

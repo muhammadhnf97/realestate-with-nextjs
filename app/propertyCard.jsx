@@ -11,7 +11,7 @@ export default function PropertyCard({listPerumahan}){
         listPerumahan?.map(data=>{
             return (
               <Link key={data?.id} href={{ pathname : `/property/${data?.id}`}}>
-                <section className="w-full my-2 flex flex-col bg-white hover:bg-slate-50 relative rounded-md overflow-hidden shadow-sm">
+                <section className="w-full my-2 flex flex-col bg-white hover:bg-slate-50 relative rounded-md overflow-hidden shadow-sm hover:scale-105 duration-150">
                     <div className="relative w-full h-48">
                         <Image src={data?.thumbnail} alt={'thumbnail'} fill className="object-cover"/>
                     </div>
