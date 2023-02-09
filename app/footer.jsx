@@ -5,7 +5,7 @@ export default function Footer(){
     <div className='text-center py-5 bg-white  mt-5'>
         <div className='px-5 md:max-w-7xl md:mx-auto'>
         <h2 className="font-bold text-2xl">Who's us ?</h2>
-        <div className='md:flex items-center gap-5'>
+        <div className='md:flex items-center gap-5 text-sm'>
             <section className='px-2 py-1 rounded-lg mt-1 mb-5 flex-1'>
             <p>Kami merupakan perusahaan pengembang perumahan di Pekanbaru yang bergerak dibidang developer. Kami berusaha memberukan produk perumahan berupa kavling siap bangun. Dimana dengan produk semacam, ini diharapkan kualitas bangunan menjadi sebagaimana yang diinginkan, karena akan menjadi kontrol bersama antara developer dan pembeli pada saat atau proses pembangunan berlangsung.</p>
             </section>

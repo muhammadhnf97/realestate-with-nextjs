@@ -15,9 +15,11 @@ import { useState } from "react"
 export default function Details({params : {id}}){
     const [isDetailImage, setIsDetailImage] = useState(false)
     const [image, setImage] = useState('')
-    const handleClickDetailImage = (image) => {
+    const [imageID, setImageID] = useState('')
+    const handleClickDetailImage = (image,imgID) => {
         setIsDetailImage(prev=>!prev)
         setImage(image)
+        setImageID(imgID)
     }
     if(dataPerumahan?.filter(data=>data.id == id).length < 1){
         return (
@@ -33,9 +35,9 @@ export default function Details({params : {id}}){
         {dataPerumahan?.filter(data=>data.id == id).map(datarumah=>{
             return (
             <>
-            {isDetailImage && <section id="modalDetailImage" className="bg-black w-full h-full fixed top-0 left-0 z-20 bg-opacity-50 flex flex-col items-center justify-center">
+            {isDetailImage && <section id="modalDetailImage" key={imageID} className="bg-black w-full h-full fixed top-0 left-0 z-20 bg-opacity-50 flex flex-col items-center justify-center">
                 <button className="h-full w-full absolute top-0 left-0" onClick={handleClickDetailImage}></button>
-                <div className="bg-white relative w-[60vw] h-[80vh]">
+                <div className="bg-white relative md:w-[60vw] md:h-[80vh] w-full h-[50vh]">
                     <Image src={image} alt="image" fill className="object-cover"  />
                 </div>
             </section>}
@@ -51,7 +53,7 @@ export default function Details({params : {id}}){
                                 const imgID = nanoid()
                                 return (
                                     <div key={imgID} className="relative w-full h-24 md:h-32">
-                                        <button onClick={()=>handleClickDetailImage(data)}><Image src={data} alt='images' fill className="object-cover" /></button>
+                                        <button onClick={()=>handleClickDetailImage(data, imgID)}><Image src={data} alt='images' fill className="object-cover" /></button>
                                     </div>
                                 )
                             })}
@@ -83,7 +85,7 @@ export default function Details({params : {id}}){
                 </div>
                 <div className="w-full h-fit my-10">
                 <h2 className="font-bold text-lg">Property Lainnya</h2>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="flex flex-col md:grid md:grid-cols-3 md:gap-3">
                     <PropertyCard listPerumahan={dataPerumahan?.filter(data=>data.onprogress)} />
                 </div>
 

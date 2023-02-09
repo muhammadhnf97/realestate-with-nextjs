@@ -83,7 +83,7 @@ export default function Home() {
           </div>
           <div className='space-y-2'>
             <p className='text-sm'>Pinjaman ke Bank / Plafond KPR (rupiah)</p>
-            <input id='plafondkpr' type={'text'} name='plafondkpr' className='w-full md:w-96 border px-3 rounded-md placeholder:italic placeholder:text-sm' placeholder='masukan nilai plafond' onChange={(e)=>handleChangePlafondKpr(e)}  />
+            <input id='plafondkpr' type={'text'} name='plafondkpr' className='w-full md:w-96 border px-3 rounded-md placeholder:italic placeholder:text-sm' placeholder='masukan nilai plafond' value={plafondKpr} onChange={(e)=>handleChangePlafondKpr(e)}  />
           </div>
           <div className='space-y-2'>
             <p className='text-sm'>Bunga Per Tahun (%)</p>
